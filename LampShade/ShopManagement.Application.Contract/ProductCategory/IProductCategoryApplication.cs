@@ -1,9 +1,11 @@
-﻿namespace ShopManagement.Application.Contract.ProductCategory
+﻿using _0_Framework.Application;
+
+namespace ShopManagement.Application.Contract.ProductCategory
 {
     public interface IProductCategoryApplication
     {
-        void Create(CreateProductCategory command);
-        void Edit(EditProductCategory command);
+        OperationResult Create(CreateProductCategory command);
+        OperationResult Edit(EditProductCategory command);
         Domain.ProductCategoryAgg.ProductCategory GetDetails(long Id);
         List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel);
     }

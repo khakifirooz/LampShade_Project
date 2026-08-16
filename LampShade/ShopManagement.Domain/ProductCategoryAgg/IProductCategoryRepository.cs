@@ -1,6 +1,6 @@
 ﻿namespace ShopManagement.Domain.ProductCategoryAgg
 {
-    public interface IProductRepository
+    public interface IProductCategoryRepository
     {
         void Create(ProductCategory entity);
         ProductCategory Get(long id);
