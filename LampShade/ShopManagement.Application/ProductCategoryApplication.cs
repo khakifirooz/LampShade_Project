@@ -17,10 +17,10 @@ namespace ShopManagement.Application
         {
             var operation = new OperationResult();
 
-            if (_productCategoryRepository.Exists(command.Name))
+            if (_productCategoryRepository.Exists(x => x.Name == command.Name))
                 return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
 
-            var slug = command.Slug.Slugifyy();
+            var slug = command.Slug.Slugify();
             var productCategory = new ProductCategory(command.Name, command.Description,
                 command.Picture, command.PictureTitle, command.PictureAlt, command.Keyword,
                 command.MetaDescription, slug);
@@ -35,17 +35,32 @@ namespace ShopManagement.Application
 
         public OperationResult Edit(EditProductCategory command)
         {
-            throw new NotImplementedException();
+            var operationResult = new OperationResult();
+            var productCategory = _productCategoryRepository.Get(command.Id);
+            if (productCategory != null)
+                {
+                if (_productCategoryRepository.Exists(x => x.Name == command.Name && x.Id != command.Id))
+                    return operationResult.Failed("امکان ثبت رکورد تکراری وجود ندارد");
+                var slug = command.Slug.Slugify();
+                productCategory.Edit(command.Name, command.Description, command.Picture, command.PictureTitle,
+                    command.PictureAlt, command.Keyword, command.MetaDescription, slug);
+                _productCategoryRepository.SavaChanges();
+                return operationResult.Succeeded();
+            }
+            else
+            {
+                return operationResult.Failed("رکورد مورد نظر یافت نشد");
+            }
         }
 
-        public ProductCategory GetDetails(long Id)
+        public EditProductCategory GetDetails(long Id)
         {
-            throw new NotImplementedException();
+            return _productCategoryRepository.GetDetails(Id);
         }
 
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
-            throw new NotImplementedException();
+            return _productCategoryRepository.Search(searchModel);
         }
     }
 }

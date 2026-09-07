@@ -5,9 +5,9 @@ using System.Text.RegularExpressions;
 
 namespace _0_Framework.Application
 {
-    public static class Slugify
+    public static class GenerateSlug
     {
-        public static string Slugifyy(this string phrase)
+        public static string Slugify(this string phrase)
         {
             var s = phrase.RemoveDiacritics().ToLower();
 

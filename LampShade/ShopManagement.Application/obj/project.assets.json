@@ -16,7 +16,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "ShopManagement.Domain": "1.0.0"
+          "0_Framework": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopManagement.Application.Contract.dll": {}
@@ -29,7 +29,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "0_Framework": "1.0.0"
+          "0_Framework": "1.0.0",
+          "ShopManagement.Application.Contract": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ShopManagement.Domain.dll": {}
@@ -59,7 +60,8 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "ShopManagement.Application.Contract >= 1.0.0"
+      "ShopManagement.Application.Contract >= 1.0.0",
+      "ShopManagement.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -96,6 +98,9 @@
           "projectReferences": {
             "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
               "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+            },
+            "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
             }
           }
         }

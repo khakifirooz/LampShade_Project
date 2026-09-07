@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/0_Framework.dll": {}
         }
+      },
+      "ShopManagement.Application.Contract/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "0_Framework": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Application.Contract.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Application.Contract.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
+    },
+    "ShopManagement.Application.Contract/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Application.Contract/ShopManagement.Application.Contract.csproj",
+      "msbuildProject": "../ShopManagement.Application.Contract/ShopManagement.Application.Contract.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "0_Framework >= 1.0.0"
+      "0_Framework >= 1.0.0",
+      "ShopManagement.Application.Contract >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -60,6 +79,9 @@
           "projectReferences": {
             "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj": {
               "projectPath": "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj"
+            },
+            "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
             }
           }
         }

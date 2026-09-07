@@ -97,8 +97,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-                "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+              "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj": {
+                "projectPath": "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj"
               }
             }
           }
@@ -168,6 +168,9 @@
             "projectReferences": {
               "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
                 "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+              },
+              "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
+                "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
               }
             }
           }
@@ -237,6 +240,9 @@
             "projectReferences": {
               "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj": {
                 "projectPath": "F:\\LampShade Project\\LampShade\\0_Framework\\0_Framework.csproj"
+              },
+              "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+                "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
               }
             }
           }
