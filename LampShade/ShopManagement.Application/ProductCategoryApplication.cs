@@ -15,7 +15,22 @@ namespace ShopManagement.Application
 
         public OperationResult Create(CreateProductCategory command)
         {
-            throw new NotImplementedException();
+            var operation = new OperationResult();
+
+            if (_productCategoryRepository.Exists(command.Name))
+                return operation.Failed("امکان ثبت رکورد تکراری وجود ندارد");
+
+            var slug = command.Slug.Slugifyy();
+            var productCategory = new ProductCategory(command.Name, command.Description,
+                command.Picture, command.PictureTitle, command.PictureAlt, command.Keyword,
+                command.MetaDescription, slug);
+
+            _productCategoryRepository.Create(productCategory);
+            _productCategoryRepository.SavaChanges();
+
+            return operation.Succeeded();
+
+
         }
 
         public OperationResult Edit(EditProductCategory command)
