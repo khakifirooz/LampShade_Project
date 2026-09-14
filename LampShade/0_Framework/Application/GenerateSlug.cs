@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace _0_Framework.Application
 {
+    //slug
     public static class GenerateSlug
     {
         public static string Slugify(this string phrase)
