@@ -26,7 +26,7 @@ namespace ShopManagement.Application
                 command.MetaDescription, slug);
 
             _productCategoryRepository.Create(productCategory);
-            _productCategoryRepository.SavaChanges();
+            _productCategoryRepository.SaveChanges();
 
             return operation.Succeeded();
 
@@ -44,7 +44,7 @@ namespace ShopManagement.Application
                 var slug = command.Slug.Slugify();
                 productCategory.Edit(command.Name, command.Description, command.Picture, command.PictureTitle,
                     command.PictureAlt, command.Keyword, command.MetaDescription, slug);
-                _productCategoryRepository.SavaChanges();
+                _productCategoryRepository.SaveChanges();
                 return operationResult.Succeeded();
             }
             else

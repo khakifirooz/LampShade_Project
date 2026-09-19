@@ -1491,6 +1491,20 @@
           "bin/placeholder/0_Framework.dll": {}
         }
       },
+      "ShopManagement.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ShopManagement.Application.Contract": "1.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Application.dll": {}
+        }
+      },
       "ShopManagement.Application.Contract/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -1516,6 +1530,21 @@
         },
         "runtime": {
           "bin/placeholder/ShopManagement.Domain.dll": {}
+        }
+      },
+      "ShopManagement.Infrastructure.EFCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "8.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0",
+          "ShopManagement.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ShopManagement.Infrastructure.EFCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ShopManagement.Infrastructure.EFCore.dll": {}
         }
       }
     }
@@ -4052,6 +4081,11 @@
       "path": "../0_Framework/0_Framework.csproj",
       "msbuildProject": "../0_Framework/0_Framework.csproj"
     },
+    "ShopManagement.Application/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Application/ShopManagement.Application.csproj",
+      "msbuildProject": "../ShopManagement.Application/ShopManagement.Application.csproj"
+    },
     "ShopManagement.Application.Contract/1.0.0": {
       "type": "project",
       "path": "../ShopManagement.Application.Contract/ShopManagement.Application.Contract.csproj",
@@ -4061,6 +4095,11 @@
       "type": "project",
       "path": "../ShopManagement.Domain/ShopManagement.Domain.csproj",
       "msbuildProject": "../ShopManagement.Domain/ShopManagement.Domain.csproj"
+    },
+    "ShopManagement.Infrastructure.EFCore/1.0.0": {
+      "type": "project",
+      "path": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj",
+      "msbuildProject": "../ShopManagement.Infrastructure.EFCore/ShopManagement.Infrastructure.EFCore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4068,7 +4107,9 @@
       "Microsoft.EntityFrameworkCore >= 8.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.0",
-      "ShopManagement.Domain >= 1.0.0"
+      "ShopManagement.Application >= 1.0.0",
+      "ShopManagement.Application.Contract >= 1.0.0",
+      "ShopManagement.Infrastructure.EFCore >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4078,11 +4119,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\LampShade Project\\LampShade\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
-      "projectName": "ShopManagement.Infrastructure.EFCore",
-      "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj",
+      "projectUniqueName": "F:\\LampShade Project\\LampShade\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj",
+      "projectName": "ShopManagement.Configuration",
+      "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Configuration\\ShopManagement.Configuration.csproj",
       "packagesPath": "C:\\Users\\Mehrshad\\.nuget\\packages\\",
-      "outputPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Infrastructure.EFCore\\obj\\",
+      "outputPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Configuration\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -4103,8 +4144,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj": {
-              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Domain\\ShopManagement.Domain.csproj"
+            "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj": {
+              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application.Contract\\ShopManagement.Application.Contract.csproj"
+            },
+            "F:\\LampShade Project\\LampShade\\ShopManagement.Application\\ShopManagement.Application.csproj": {
+              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Application\\ShopManagement.Application.csproj"
+            },
+            "F:\\LampShade Project\\LampShade\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj": {
+              "projectPath": "F:\\LampShade Project\\LampShade\\ShopManagement.Infrastructure.EFCore\\ShopManagement.Infrastructure.EFCore.csproj"
             }
           }
         }

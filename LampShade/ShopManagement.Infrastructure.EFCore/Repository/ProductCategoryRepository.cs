@@ -1,31 +1,19 @@
 ﻿using System.Linq.Expressions;
+using _0_Framework.Infrastructure;
 using ShopManagement.Application.Contract.ProductCategory;
 using ShopManagement.Domain.ProductCategoryAgg;
 
 namespace ShopManagement.Infrastructure.EFCore.Repository
 {
-    public class ProductCategoryRepository : IProductCategoryRepository
+    public class ProductCategoryRepository : RepositoryBase<long, ProductCategory> , IProductCategoryRepository
     {
         private readonly ShopContext _context;
-        public void Create(ProductCategory entity)
-        {
-            _context.ProductCategories.Add(entity);
-        }
 
-        public bool Exists(Expression<Func<ProductCategory, bool>> expression)
+        public ProductCategoryRepository(ShopContext context) : base(context)
         {
-            return _context.ProductCategories.Any(expression);
+            _context = context;
         }
-
-        public ProductCategory Get(long id)
-        {
-            return _context.ProductCategories.Find(id);
-        }
-
-        public List<ProductCategory> GetAll()
-        {
-            return _context.ProductCategories.ToList();
-        }
+        
 
         public EditProductCategory GetDetails(long id)
         {
@@ -44,11 +32,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             }).FirstOrDefault(x => x.Id == id);
         }
 
-        public void SavaChanges()
-        {
-            _context.SaveChanges();
-        }
-
         public List<ProductCategoryViewModel> Search(ProductCategorySearchModel searchModel)
         {
             var query = _context.ProductCategories.Select(x => new ProductCategoryViewModel()
@@ -62,6 +45,6 @@ namespace ShopManagement.Infrastructure.EFCore.Repository
             if (!string.IsNullOrWhiteSpace(searchModel.Name))
                 query = query.Where(x => x.Name.Contains(searchModel.Name));
 
-            return query.OrderByDescending(x =>x.Id).ToList();
+            return query.OrderByDescending(x => x.Id).ToList();
     }   }
 }

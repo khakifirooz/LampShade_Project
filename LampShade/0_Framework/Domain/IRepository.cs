@@ -7,7 +7,7 @@ namespace _0_Framework.Domain
         void Create(T entity);
         T Get(TKey id);
         List<T> GetAll();
-        bool Exist(Expression<Func<T, bool>> predicate);
+        bool Exists(Expression<Func<T, bool>> predicate);
         void SaveChanges();
     }
 }
